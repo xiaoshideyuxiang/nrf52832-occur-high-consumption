@@ -1,0 +1,16 @@
+JLink*
+*uvguix.*
+*.uvoptx
+hex/
+pca10056/
+pca10040/s132/arm4/
+pca10040/s132/iar/
+pca10040/s132/armgcc/
+pca10040/s132/arm5_no_packs/_build/
+*.eww
+*.orig
+*.bak
+*.zip
+*.scvd
+*.rar
+docs/
