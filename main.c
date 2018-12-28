@@ -167,6 +167,7 @@ typedef enum
     NRF_WDT_BEHAVIOUR_PAUSE_SLEEP_HALT = 0,                                          /**< WDT will be paused when CPU is in SLEEP or HALT mode. */
 } nrf_wdt_behaviour_t;
 #endif
+#include "nrf_delay.h"
 
 static void config_WDT(void)
 {
@@ -184,13 +185,15 @@ static void config_WDT(void)
 	err_code = nrf_drv_wdt_channel_alloc(&m_wdt_channel_id);
 	APP_ERROR_CHECK(err_code);
 	nrf_drv_wdt_enable();
-}
 
+}
 
 void feed_WDT(void)
 {
 #ifdef ADD_WDT
 	nrf_drv_wdt_channel_feed(m_wdt_channel_id);
+        
+    nrf_delay_us(128);
 #endif
 }
 
